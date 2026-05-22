@@ -1,0 +1,23 @@
+title = "Barbershop DevOps - Gitleaks Config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "aws-access-key"
+description = "AWS Access Key"
+regex = '''AKIA[0-9A-Z]{16}'''
+tags = ["aws", "credentials"]
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(api_key|apikey|api-key)\s*[:=]\s*["\']?[a-zA-Z0-9]{20,}'''
+tags = ["api-key"]
+
+[allowlist]
+paths = [
+  '''.gitleaks.toml''',
+  '''\.env\.example'''
+]
+
