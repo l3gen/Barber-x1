@@ -1,1 +1,1 @@
-# Barber-x1# triggering pipeline
+# Barber-x1
